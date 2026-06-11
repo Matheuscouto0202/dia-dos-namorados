@@ -169,15 +169,16 @@
       }
     }
 
-    /* ── particles ── */
+    /* ── pétalas subindo ── */
     .particle {
-      position: fixed; border-radius: 50%;
-      background: rgba(255,210,30,0.50);
-      box-shadow: 0 0 7px rgba(255,200,20,0.52);
+      position: fixed;
+      border-radius: 50%;
+      background: linear-gradient(160deg, #FFEE55 0%, #FFD000 50%, #FFAA00 100%);
       pointer-events: none; z-index: 3;
       animation: floatUp var(--dur) var(--delay) ease-in infinite;
-      left: var(--x); bottom: -12px;
-      width: var(--sz); height: var(--sz);
+      left: var(--x); bottom: -20px;
+      width: var(--w); height: var(--h);
+      filter: drop-shadow(0 0 3px rgba(255,200,20,0.45));
     }
 
     /* ── page / letter ── */
@@ -273,10 +274,10 @@
       to   { opacity: 1;    transform: scale(1.22); }
     }
     @keyframes floatUp {
-      0%   { transform: translateY(0)       translateX(0)    scale(1);   opacity: 0.75; }
-      30%  { transform: translateY(-30vh)   translateX(14px) scale(0.9); opacity: 0.55; }
-      60%  { transform: translateY(-62vh)   translateX(-9px) scale(0.7); opacity: 0.35; }
-      100% { transform: translateY(-108vh)  translateX(18px) scale(0.3); opacity: 0;   }
+      0%   { transform: translateY(0)      translateX(0)    rotate(var(--rot)) scale(1);    opacity: 0.85; }
+      30%  { transform: translateY(-30vh)  translateX(12px) rotate(calc(var(--rot) + 80deg))  scale(0.88); opacity: 0.62; }
+      60%  { transform: translateY(-62vh)  translateX(-8px) rotate(calc(var(--rot) + 185deg)) scale(0.68); opacity: 0.36; }
+      100% { transform: translateY(-108vh) translateX(16px) rotate(calc(var(--rot) + 310deg)) scale(0.28); opacity: 0; }
     }
     @keyframes fadeIn    { from { opacity:0; } to { opacity:1; } }
     @keyframes fadeInUp  { from { opacity:0; transform:translateY(40px); } to { opacity:1; transform:translateY(0); } }
@@ -408,15 +409,19 @@
   <span class="note">♫</span>
 </button>
 
-<!-- pollen particles -->
-<div class="particle" style="--x:7%;  --sz:7px; --dur:11s; --delay:0s"    aria-hidden="true"></div>
-<div class="particle" style="--x:17%; --sz:5px; --dur:14s; --delay:-3s"   aria-hidden="true"></div>
-<div class="particle" style="--x:27%; --sz:9px; --dur:9s;  --delay:-6.5s" aria-hidden="true"></div>
-<div class="particle" style="--x:73%; --sz:6px; --dur:12s; --delay:-1.5s" aria-hidden="true"></div>
-<div class="particle" style="--x:83%; --sz:8px; --dur:10s; --delay:-8s"   aria-hidden="true"></div>
-<div class="particle" style="--x:91%; --sz:5px; --dur:13s; --delay:-4s"   aria-hidden="true"></div>
-<div class="particle" style="--x:50%; --sz:6px; --dur:16s; --delay:-9s"   aria-hidden="true"></div>
-<div class="particle" style="--x:40%; --sz:4px; --dur:11s; --delay:-2s"   aria-hidden="true"></div>
+<!-- pétalas subindo -->
+<div class="particle" style="--x:7%;  --w:6px;  --h:14px; --rot:15deg;  --dur:11s;  --delay:0s"    aria-hidden="true"></div>
+<div class="particle" style="--x:17%; --w:5px;  --h:12px; --rot:45deg;  --dur:14s;  --delay:-3s"   aria-hidden="true"></div>
+<div class="particle" style="--x:27%; --w:8px;  --h:18px; --rot:70deg;  --dur:9s;   --delay:-6.5s" aria-hidden="true"></div>
+<div class="particle" style="--x:73%; --w:6px;  --h:13px; --rot:-20deg; --dur:12s;  --delay:-1.5s" aria-hidden="true"></div>
+<div class="particle" style="--x:83%; --w:7px;  --h:16px; --rot:120deg; --dur:10s;  --delay:-8s"   aria-hidden="true"></div>
+<div class="particle" style="--x:91%; --w:5px;  --h:11px; --rot:200deg; --dur:13s;  --delay:-4s"   aria-hidden="true"></div>
+<div class="particle" style="--x:50%; --w:6px;  --h:14px; --rot:85deg;  --dur:16s;  --delay:-9s"   aria-hidden="true"></div>
+<div class="particle" style="--x:40%; --w:5px;  --h:12px; --rot:-45deg; --dur:11s;  --delay:-2s"   aria-hidden="true"></div>
+<div class="particle" style="--x:62%; --w:7px;  --h:15px; --rot:160deg; --dur:13s;  --delay:-5s"   aria-hidden="true"></div>
+<div class="particle" style="--x:33%; --w:6px;  --h:13px; --rot:230deg; --dur:12s;  --delay:-7s"   aria-hidden="true"></div>
+<div class="particle" style="--x:78%; --w:5px;  --h:11px; --rot:300deg; --dur:15s;  --delay:-11s"  aria-hidden="true"></div>
+<div class="particle" style="--x:55%; --w:7px;  --h:16px; --rot:-60deg; --dur:10s;  --delay:-4.5s" aria-hidden="true"></div>
 
 <!-- letter -->
 <main class="page">
